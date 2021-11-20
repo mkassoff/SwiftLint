@@ -107,6 +107,14 @@ public struct NoSpaceInMethodCallRule: SubstitutionCorrectableASTRule, Configura
             return []
         }
 
+        if let name = dictionary.name, name == "it" {
+            return []
+        }
+
+        if let name = dictionary.name, name == "describe" {
+            return []
+        }
+
         return [range]
     }
 }
